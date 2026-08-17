@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0e14" />
+    <meta
+      name="description"
+      content="idktube — a calmer way to watch the internet's best videos."
+    />
+    <title>idktube — watch what matters</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="i-home" viewBox="0 0 24 24">
+        <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z" />
+      </symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" /><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z" />
+      </symbol>
+      <symbol id="i-flame" viewBox="0 0 24 24">
+        <path d="M12.3 21c4.2 0 7.2-2.8 7.2-6.9 0-3.2-1.9-5.7-4.4-7.7.1 2.3-.8 3.7-2.2 4.4.2-3.5-1.7-6.2-4.3-7.8.2 3.2-2.6 5-2.6 8.9C6 17.1 8.5 21 12.3 21Z" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3.5 2" />
+      </symbol>
+      <symbol id="i-bookmark" viewBox="0 0 24 24">
+        <path d="M6 4.8A1.8 1.8 0 0 1 7.8 3h8.4A1.8 1.8 0 0 1 18 4.8V21l-6-3-6 3V4.8Z" />
+      </symbol>
+      <symbol id="i-list" viewBox="0 0 24 24">
+        <path d="M8 6h12M8 12h12M8 18h12M3.5 6h.01M3.5 12h.01M3.5 18h.01" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.5 4.5" />
+      </symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4" />
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1" fill="currentColor" stroke="none" /><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none" /><circle cx="19" cy="12" r="1" fill="currentColor" stroke="none" /></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="m9 6 9 6-9 6V6Z" fill="currentColor" stroke="none" /></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 6v12M16 6v12" /></symbol>
+      <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 10v4h4l5 4V6l-5 4H4ZM17 9a5 5 0 0 1 0 6M19.5 6.5a9 9 0 0 1 0 11" /></symbol>
+      <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H3v5M16 3h5v5M8 21H3v-5M21 16v5h-5" /></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 1.5 6.5L20 10l-6.5 1.5L12 18l-1.5-6.5L4 10l6.5-1.5L12 2ZM19 16l.7 2.3L22 19l-2.3.7L19 22l-.7-2.3L16 19l2.3-.7L19 16Z" /></symbol>
+    </svg>
+
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand-row">
+          <a class="brand" href="#" aria-label="idktube home">
+            <span class="brand-mark"><span></span></span>
+            <span class="brand-name">idk<span>tube</span></span>
+          </a>
+          <button class="icon-button sidebar-close" id="sidebarClose" aria-label="Close navigation">
+            <svg><use href="#i-x"></use></svg>
+          </button>
+        </div>
+
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a class="nav-item active" href="#" data-view="Home"><svg><use href="#i-home"></use></svg><span>Home</span></a>
+          <a class="nav-item" href="#" data-view="Explore"><svg><use href="#i-compass"></use></svg><span>Explore</span></a>
+          <a class="nav-item" href="#" data-view="Trending"><svg><use href="#i-flame"></use></svg><span>Trending</span><span class="nav-badge">4</span></a>
+        </nav>
+
+        <div class="nav-divider"></div>
+
+        <p class="nav-label">Your stuff</p>
+        <nav class="secondary-nav" aria-label="Your library">
+          <a class="nav-item" href="#" data-view="Watch later"><svg><use href="#i-clock"></use></svg><span>Watch later</span></a>
+          <a class="nav-item" href="#" data-view="Saved"><svg><use href="#i-bookmark"></use></svg><span>Saved</span></a>
+          <a class="nav-item" href="#" data-view="Playlists"><svg><use href="#i-list"></use></svg><span>Playlists</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="side-note">
+            <div class="note-icon"><svg><use href="#i-spark"></use></svg></div>
+            <div>
+              <strong>Make your own queue</strong>
+              <p>Save the good stuff for later.</p>
+            </div>
+          </div>
+          <button class="create-button"><svg><use href="#i-plus"></use></svg> New playlist</button>
+          <p class="legal">© 2024 idktube<br /><a href="#">About</a><a href="#">Privacy</a><a href="#">Terms</a></p>
+        </div>
+      </aside>
+
+      <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menuButton" aria-label="Open navigation">
+            <svg><use href="#i-menu"></use></svg>
+          </button>
+          <form class="search-form" id="searchForm" role="search">
+            <svg class="search-icon"><use href="#i-search"></use></svg>
+            <input id="searchInput" type="search" placeholder="Search videos, channels, or topics" autocomplete="off" />
+            <button class="search-shortcut" type="button" aria-label="Search shortcut">⌘ K</button>
+          </form>
+          <div class="topbar-actions">
+            <button class="icon-button notification-button" aria-label="Notifications"><svg><use href="#i-bell"></use></svg><i></i></button>
+            <button class="profile-button" aria-label="Open profile menu"><span>HX</span><b>Hake</b><em>⌄</em></button>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="welcome-row">
+            <div>
+              <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY DISCOVERY</p>
+              <h1 id="pageTitle">Good evening, Hake<span>.</span></h1>
+              <p class="subheading">A little bit of everything, minus the noise.</p>
+            </div>
+            <div class="date-chip"><span class="date-day">MON</span><strong>17</strong><span class="date-month">AUG</span></div>
+          </section>
+
+          <section class="featured-section" aria-labelledby="featuredTitle">
+            <div class="section-heading">
+              <div><p class="section-kicker">PICKED FOR YOU</p><h2 id="featuredTitle">The main character energy</h2></div>
+              <button class="text-button" data-action="view-all">View all <svg><use href="#i-arrow"></use></svg></button>
+            </div>
+            <article class="hero-card video-trigger" data-video-id="jNQXAC9IVRw" data-video-title="Me at the zoo — the first ever YouTube video" data-channel="jawed" data-duration="0:19">
+              <div class="hero-visual">
+                <img src="https://i.ytimg.com/vi/jNQXAC9IVRw/maxresdefault.jpg" alt="A quiet zoo enclosure in a sunny park" />
+                <div class="visual-shade"></div>
+                <div class="hero-copy">
+                  <span class="hero-tag">A piece of internet history</span>
+                  <h3>Start somewhere.<br /><i>Start here.</i></h3>
+                  <p>The tiny moments that made the internet feel like a place.</p>
+                  <button class="watch-button"><svg><use href="#i-play"></use></svg> Watch now</button>
+                </div>
+                <span class="duration hero-duration">0:19</span>
+              </div>
+              <div class="hero-meta">
+                <div class="channel-avatar avatar-jawed">J</div>
+                <div><h4>Me at the zoo</h4><p>jawed <span>•</span> 1.2B views <span>•</span> 19 years ago</p></div>
+                <button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button>
+              </div>
+            </article>
+          </section>
+
+          <section class="feed-section" aria-labelledby="feedTitle">
+            <div class="section-heading feed-heading">
+              <div><p class="section-kicker">KEEP EXPLORING</p><h2 id="feedTitle">For your next rabbit hole</h2></div>
+              <div class="feed-controls"><button class="filter-button active" data-filter="all">All</button><button class="filter-button" data-filter="music">Music</button><button class="filter-button" data-filter="design">Design</button><button class="filter-button" data-filter="learn">Learn</button></div>
+            </div>
+            <div class="video-grid" id="videoGrid">
+              <article class="video-card video-trigger" data-category="design" data-video-id="M7lc1UVf-VE" data-video-title="Build a better creative practice" data-channel="The Creative Lab" data-duration="8:42">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/M7lc1UVf-VE/hqdefault.jpg" alt="Creative studio desk with warm light" loading="lazy" /><span class="duration">8:42</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-purple">C</div><div class="video-details"><h3>Build a better creative practice</h3><p>The Creative Lab</p><p>428K views <span>•</span> 2 days ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+              <article class="video-card video-trigger" data-category="music" data-video-id="60ItHLz5WEA" data-video-title="Faded" data-channel="Alan Walker" data-duration="3:33">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg" alt="Blue and purple abstract music artwork" loading="lazy" /><span class="duration">3:33</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-blue">A</div><div class="video-details"><h3>Faded</h3><p>Alan Walker</p><p>3.5B views <span>•</span> 9 years ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+              <article class="video-card video-trigger" data-category="learn" data-video-id="hTWKbfoikeg" data-video-title="Nirvana — Smells Like Teen Spirit" data-channel="Nirvana" data-duration="4:38">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/hTWKbfoikeg/hqdefault.jpg" alt="A live band performing on a stage" loading="lazy" /><span class="duration">4:38</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-orange">N</div><div class="video-details"><h3>Why this song still sounds new</h3><p>Digging Deeper</p><p>2.1M views <span>•</span> 1 week ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+              <article class="video-card video-trigger" data-category="design" data-video-id="fJ9rUzIMcZQ" data-video-title="Queen — Bohemian Rhapsody" data-channel="Queen Official" data-duration="6:07">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/fJ9rUzIMcZQ/hqdefault.jpg" alt="Black and white portrait of a rock band" loading="lazy" /><span class="duration">6:07</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-red">Q</div><div class="video-details"><h3>Making the unforgettable</h3><p>Queen Official</p><p>1.7B views <span>•</span> 6 years ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+              <article class="video-card video-trigger" data-category="music" data-video-id="9bZkp7q19f0" data-video-title="PSY — GANGNAM STYLE" data-channel="officialpsy" data-duration="4:13">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Colorful music video still" loading="lazy" /><span class="duration">4:13</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-yellow">P</div><div class="video-details"><h3>GANGNAM STYLE</h3><p>officialpsy</p><p>5.4B views <span>•</span> 12 years ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+              <article class="video-card video-trigger" data-category="learn" data-video-id="kJQP7kiw5Fk" data-video-title="Luis Fonsi — Despacito" data-channel="Luis Fonsi" data-duration="4:42">
+                <div class="thumbnail"><img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Warm orange and teal music video scene" loading="lazy" /><span class="duration">4:42</span><button class="hover-play" aria-label="Play video"><svg><use href="#i-play"></use></svg></button></div>
+                <div class="card-info"><div class="channel-avatar avatar-teal">L</div><div class="video-details"><h3>How a global hit comes together</h3><p>Song Stories</p><p>840K views <span>•</span> 3 weeks ago</p></div><button class="more-button" aria-label="More options"><svg><use href="#i-more"></use></svg></button></div>
+              </article>
+            </div>
+            <div class="empty-state" id="emptyState" hidden><div class="empty-icon"><svg><use href="#i-search"></use></svg></div><h3>No videos found</h3><p>Try another search or browse a different lane.</p></div>
+          </section>
+
+          <section class="continue-section" aria-labelledby="continueTitle">
+            <div class="section-heading"><div><p class="section-kicker">DON'T LOSE THE THREAD</p><h2 id="continueTitle">Continue watching</h2></div><button class="text-button" data-action="view-all">See history <svg><use href="#i-arrow"></use></svg></button></div>
+            <div class="continue-card">
+              <div class="continue-art"><img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Colorful music video artwork" /><span class="progress"><i style="width: 38%"></i></span></div>
+              <div class="continue-copy"><span class="continue-label">UP NEXT IN YOUR QUEUE</span><h3>Never gonna give you up</h3><p>Rick Astley <span>•</span> 2:01 left</p></div>
+              <button class="round-play video-trigger" data-video-id="dQw4w9WgXcQ" data-video-title="Never Gonna Give You Up" data-channel="Rick Astley" data-duration="3:33" aria-label="Continue watching"><svg><use href="#i-play"></use></svg></button>
+            </div>
+          </section>
+        </div>
+        <footer class="mobile-footer">idktube <span>•</span> made for the curious</footer>
+      </main>
+    </div>
+
+    <div class="player-modal" id="playerModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+      <div class="player-backdrop" data-close-player></div>
+      <div class="player-dialog">
+        <button class="player-close" data-close-player aria-label="Close video player"><svg><use href="#i-x"></use></svg></button>
+        <div class="player-frame-wrap"><iframe id="playerFrame" title="YouTube video player" src="" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="player-details"><div><p class="section-kicker">NOW PLAYING</p><h2 id="playerTitle">Video title</h2><p id="playerMeta">Channel · duration</p></div><button class="save-player"><svg><use href="#i-bookmark"></use></svg> Save</button></div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
